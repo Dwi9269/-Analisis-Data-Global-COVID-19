@@ -37,12 +37,12 @@ Platform: Kaggle Notebook
 1. Analisis Tingkat Kematian (Death Rate)
 Fokus Query: Menghitung kemungkinan meninggal jika terinfeksi COVID-19
 
-SELECT 
-    location, date, total_cases, total_deaths,
-    ROUND((CAST(total_deaths AS FLOAT) / CAST(total_cases AS FLOAT)) * 100, 2) AS death_percentage
-FROM covid_deaths
-WHERE location = 'Indonesia' AND total_cases > 0
+SELECT location, date, total_cases, total_deaths, 
+    ROUND((CAST(total_deaths AS FLOAT) / CAST(total_cases AS FLOAT)) * 100, 2) AS death_percentage 
+FROM covid_deaths 
+WHERE location = 'Indonesia' AND total_cases > 0 
 ORDER BY date;
+
 
 Insight Utama: Tingkat kematian Indonesia (2,37%) adalah 2,6x lebih tinggi dari rata-rata global (0,90%), mengindikasikan potensi tantangan sistem kesehatan atau perbedaan metode pelaporan.
 
